@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For MY. Baby 💍</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: lightpink;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: red;
+        }
+        .btn {
+            font-size: 20px;
+            padding: 10px;
+            border: none;
+            background-color: white;
+            cursor: pointer;
+            position: absolute;
+        }
+        #yes {
+            left: 45%;
+            top: 50%;
+        }
+        #no {
+            left: 55%;
+            top: 50%;
+            transition: 0.2s ease-in-out;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Will you marry me? 🥺👉👈</h1>
+    <button id="yes" class="btn" onclick="showMessage()">Yes!!! 😃😃 💍</button>
+    <button id="no" class="btn" onmouseover="moveButton()" ontouchstart="changeTextAndMove()">No 😭😭😭</button>
+    
+    <h2 id="message" class="hidden">YIPEEEE 😀😀 You're mine now 🫠 ❤️💍</h2>
+
+    <script>
+        function moveButton() {
+            let button = document.getElementById("no");
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 50);
+            button.style.left = x + "px";
+            button.style.top = y + "px";
+        }
+
+        function changeTextAndMove() {
+            let button = document.getElementById("no");
+            button.innerText = "No 😡"; // Change text
+            moveButton(); // Move button
+        }
+
+        function showMessage() {
+            document.getElementById("message").classList.remove("hidden");
+        }
+    </script>
+</body>
+</html>
